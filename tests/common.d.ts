@@ -1,3 +1,3 @@
-import { Connector, ConnectorOptions } from "../";
-export declare const authOpts: ConnectorOptions;
-export declare const Integrations: Connector;
+import { Integrations, IntegrationOptions } from "../";
+export declare const authOpts: IntegrationOptions;
+export declare const IntegrationsLib: Integrations;

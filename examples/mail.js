@@ -1,37 +1,49 @@
 const {
-    Connector
+    Integrations,
+    MailServiceType
 } = require("..")
 
-const dayjs = require("dayjs")
 require("dotenv").config()
 
-import {
-    MailServiceType
-} from "../services"
-import {
-    Integrations
-} from "./common"
+// after successful oauth, pass in a set of access tokens.
 
+// see token instructions in Wiki
 const opts = {
     authorizers: {
-        Microsoft: process.env.MICROSOFT || "<user access token>",
-        Google: "<user access token>",
-        Todoist: "<user access token>",
-        Github: "<user access token>",
+        Microsoft: {
+            apiToken: process.env.MICROSOFT || "<user access token>",
+        },
+        Google: {
+            apiToken: "<user access token>",
+        },
+        Todoist: {
+            apiToken: "<user access token>",
+        },
     },
 }
-const Integrations = new Connector(opts, "LIBMON TOKEN HERE")
 
-const outlookCal = Integrations.getCalendarService("Microsoft")
-const gCal = Integrations.getCalendarService("Google")
+// limbon tokens can be purchased
+const integrations = new Integrations(opts, "LIBMON_TOKEN_HERE")
 
-const Gmail = Integrations.getCalendarService(MailServiceType.Google)
+const outlook = integrations.getMailService(MailServiceType.Microsoft)
+const gmail = integrations.getMailService(MailServiceType.Google)
 
-const MicrosoftTasks = Integrations.getTaskService(MailServiceType.Microsoft)
+const draftMessage = {
+    to: ["integrations@getamna.com"],
+    cc: [],
+    bcc: [],
+    subject: "Whoa, this library works!",
+    body: "Hey, we just sent you an email from our awesome integrations library!",
+}
 
-const outlook = outlookCal.getEventFromRange(new Date(), endDate(), true)
+sendMessage()
 
-//get the em
-const startDate
-
-//perform cross-platform search
+async function sendMessage() {
+    try {
+        // send an email
+        const gmailResp = await gmail.send(draftMessage)
+        const outlookResp = await outlook.send(draftMessage)
+    } catch (ex) {
+        console.log(ex.response.status)
+    }
+}

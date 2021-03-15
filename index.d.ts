@@ -4,15 +4,16 @@ import { MailServiceType, MailService, CalendarServiceType, TaskServiceType, Tea
 import { CalendarService } from "./services/calendar/calendar";
 import { TaskService } from "./services/tasks/task";
 import TeamService from "./services/team/team";
-export interface ConnectorOptions {
+export { MailServiceType, TaskServiceType, TeamServiceType, CalendarServiceType, };
+export interface IntegrationOptions {
     authorizers?: Authorizers;
     onSubscriptionChanged?: (subscription: Subscription, changeType: UpdateEvent) => void;
 }
-export declare class Connector {
+export declare class Integrations {
     private opts;
     private authorizers;
     private subscriptions;
-    constructor(opts: ConnectorOptions, token?: string);
+    constructor(opts: IntegrationOptions, token?: string);
     setupLibmon(): void;
     addAuthorizer(service: MailServiceType | CalendarServiceType | TaskServiceType, details: AuthDetails): AuthDetails;
     getAuthorizers(): Authorizers;

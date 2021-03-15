@@ -2,11 +2,12 @@
 
 Abstracts multiple APIs to give you a shared library to call against different services such as Mail, Calendar, Work Tracking.
 
-You can [purchase](https://gumco.com/integrations-library) a full-token to use the library with no limits.
+The library has demo limits with a max of 10 calls. [Purchase](https://gumco.com/integrations-library) a full-token.
 
 We designed shared interfaces for them. [Example](https://github.com/getamna/integrations/blob/main/services/mail/index.d.ts)
 
 - [x] All communication handled directly from library
+- [x] Promise Based Methods
 - [x] Typescript Bindings
 - [x] Support for Mail, Calendar, Task and Work Tracking
 - [x] Used in [Amna](https://getamna.com)
@@ -37,9 +38,13 @@ const draftMessage = {
   body: "Hey, we just sent you and email from our awesome library!",
 }
 
-// send an email
-const gmailResp = gmail.send(draftMessage)
-const outlookResp = outlook.send(draftMessage)
+sendMail()
+
+async function sendMail() {
+  // send an email
+  const gmailResp = await gmail.send(draftMessage)
+  const outlookResp = await outlook.send(draftMessage)
+}
 ```
 
 ### 💸 Tokenized with Libmon 💸
