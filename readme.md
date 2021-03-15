@@ -2,7 +2,9 @@
 
 Abstracts multiple APIs to give you a shared library to call against different services such as Mail, Calendar, Work Tracking.
 
-We designed shared interfaces for them . [Example interface](https://github.com/getamna/integrations/blob/main/services/mail/index.d.ts)
+You can [purchase](https://gumco.com/integrations-library) a full-token to use the library with no limits.
+
+We designed shared interfaces for them. [Example](https://github.com/getamna/integrations/blob/main/services/mail/index.d.ts)
 
 - [x] All communication handled directly from library
 - [x] Typescript Bindings
@@ -44,7 +46,7 @@ const outlookResp = outlook.send(draftMessage)
 
 You may demo the library for free, and purchase a **one-time** access token for complete library usage. Read [pricing](https://gumco.com/integrations-library)
 
-Compare with services such as Nylas or Kloudless.
+Alternate to services such as Nylas or Kloudless.
 
 #### Free Limits
 
