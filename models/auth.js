@@ -1,0 +1,1 @@
+"use strict";var Permission;Object.defineProperty(exports,"__esModule",{value:!0}),function(e){e[e.Create=0]="Create",e[e.Read=1]="Read",e[e.Update=2]="Update",e[e.Delete=3]="Delete"}(Permission=exports.Permission||(exports.Permission={}));

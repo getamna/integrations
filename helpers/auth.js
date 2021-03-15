@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0});class AuthHelper{static GetAccessTokenFromCode(){}static RefreshAccessToken(){}static GetBaseUrl(){}}exports.AuthHelper=AuthHelper;
