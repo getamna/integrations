@@ -1,34 +1,21 @@
 ### Integrations
 
-Abstracts way multiple APIs to give you a shared library to call against different services such as Mail, Calendar, Work Tracking.
+Abstracts multiple APIs to give you a shared library to call against different services such as Mail, Calendar, Work Tracking.
 
-We designed shared interfaces for them . [Example interface]("sdsd")
+We designed shared interfaces for them . [Example interface](https://github.com/getamna/integrations/blob/main/services/mail/index.d.ts)
 
 - [x] All communication handled directly from library
 - [x] Typescript Bindings
 - [x] Support for Mail, Calendar, Task and Work Tracking
-- [x] Used in [Amna](getamna.com)
-
-### 💸 Monetized with Libmon 💸
-
-Similar to services such as Nylas or Kloudless.
-
-You may demo the library for free, and purchase a **one-time** access token for complete library usage. Read limits and [pricing](https://libmon.com)
-
-#### Demo Limits
-
-Token limits for SDDS
-
-- Max 10 function calls in Calendar, Mail API
-- Only 1 Task Service (Google, Todoist, Microsoft)
+- [x] Used in [Amna](https://getamna.com)
 
 ### Usage
 
-```javascript
-const { Integrations } = require("Integrations")
+```typescript
+import { Integrations, IntegrationOptions, MailServiceType } from "integrations"
 
 // after successful oauth, pass in a set of access tokens.
-const opts = {
+const opts: IntegrationOptions = {
   authorizers: {
     Microsoft: "<user access token>",
     Google: "<user access token>",
@@ -36,15 +23,16 @@ const opts = {
 }
 
 const integrations = new Integrations(opts, "DEMO_TOKEN")
+
 const outlook = integrations.getMailService(MailServiceType.Microsoft)
 const gmail = integrations.getMailService(MailServiceType.Google)
 
 const draftMessage = {
-  to: ["hi@libmon.com"],
+  to: ["integrations@getamna.com"],
   cc: [],
   bcc: [],
-  subject: "Hello!",
-  body: "Hey from our awesome library!!",
+  subject: "Whoa, this library works!",
+  body: "Hey, we just sent you and email from our awesome library!",
 }
 
 // send an email
@@ -52,27 +40,28 @@ const gmailResp = gmail.send(draftMessage)
 const outlookResp = outlook.send(draftMessage)
 ```
 
-### Services
+### 💸 Tokenized with Libmon 💸
 
-Supported Services:
-| Service | Providers |
-| ----------- | ----------- |
-| Mail | Outlook, Google |
-| Calendar | Outlook, Google |
-| Tasks | Microsoft, Todoist, Google |
-| Work | Azure DevOps, Jira, Asana, Github |
+You may demo the library for free, and purchase a **one-time** access token for complete library usage. Read [pricing](https://gumco.com/integrations-library)
+
+Compare with services such as Nylas or Kloudless.
+
+#### Free Limits
+
+- Max 10 function calls in Calendar and Mail APIs
+- Only 1 Task Service (Google, Todoist, Microsoft) at a time
 
 ### Authentication
 
-This library does not provide UI for authentication to an OAuth Provider. If you purchased a token, you can purchase our OAuth Helper for Javascript that works with most 3rd party providers. [See here](#)
+This library does not provide UI for authentication to an OAuth Provider. If you purchased a token, you can purchase our OAuth Helper for Javascript that works with most 3rd party providers. [See here](https://github.com/getamna/integrations)
 
-You can obtainin tokens from Google and Microsoft for [testing](#)
+You can obtainin tokens from Google and Microsoft for [testing](https://github.com/getamna/integrations/wiki/Personal-Auth-Tokens)
 
 ## Interface and API Definitions
 
-All interface definitions can be found in our [Public Github Repo](https://github.com)
+All interface definitions can be found in our [Public Github Repo](https://github.com/getamna/integrations)
 
-Not all methods have been implemented. There are also slight variations between two APIs.
+Not all methods have been implemented. There may also be slight variations between two APIs. Please read the [wiki](https://github.com/getamna/integrations/wiki).
 
 [Open an Issue](https://github.com/getamna/integrations)
 
@@ -81,21 +70,3 @@ Not all methods have been implemented. There are also slight variations between 
 Library supporters have the ability to open support tickets. Because we are strapped on resources, we will prioritize token purchasers first.
 
 [Open an Issue](https://github.com/getamna/integrations)
-
-To test various OAuth flows, you can get personal tokens from various providers. Here are a few ways.
-
-#### Microsoft
-
-1. Login to [Microsoft Graph Explorer](https://developer.microsoft.com/en-us/graph/graph-explorer)
-
-2. Make a request and click on the Access Token Tab
-
-3. To edit and create scopes for your token, look at the **Modify Permissions** tab
-
-#### Google
-
-1. Visit the [Google OAuth Playground](https://developers.google.com/oauthplayground/)
-
-2. Make sure to exchange your authorize token and get an access token.
-
-You can pass these tokens into the authorizer options of the [Integrations Library[].
