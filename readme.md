@@ -4,24 +4,32 @@ Abstracts multiple APIs to give you a shared library to call against different s
 
 The library has demo limits with a max of 10 calls. [Purchase](https://gumco.com/integrations-library) a full-token.
 
-We designed shared interfaces for them. [Example](https://github.com/getamna/integrations/blob/main/services/mail/index.d.ts)
+See all available methods and interfaces in the [Wiki](https://github.com/getamna/integrations/wiki)
 
-- [x] All communication handled directly from library
-- [x] Promise Based Methods
-- [x] Typescript Bindings
-- [x] Support for Mail, Calendar, Task and Work Tracking
-- [x] Used in [Amna](https://getamna.com)
+- ✅ All communication handled directly from library
+- ✅ Promise Based Methods
+- ✅ Typescript Bindings
+- ✅ Support for Mail, Calendar, Task and Work Tracking
+- 😇 Used in [Amna](https://getamna.com)
 
 ### Usage
 
 ```typescript
-import { Integrations, IntegrationOptions, MailServiceType } from "integrations"
+import {
+  Integrations,
+  IntegrationOptions,
+  MailServiceType,
+} from "integrations-lib"
 
 // after successful oauth, pass in a set of access tokens.
 const opts: IntegrationOptions = {
   authorizers: {
-    Microsoft: "<user access token>",
-    Google: "<user access token>",
+    Microsoft: {
+      apiToken: "<user access token>",
+    },
+    Google: {
+      apiToken: "<user access token>",
+    },
   },
 }
 

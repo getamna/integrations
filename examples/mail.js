@@ -41,7 +41,8 @@ sendMessage()
 async function sendMessage() {
     try {
         // send an email
-        const gmailResp = await gmail.send(draftMessage)
+
+        // const gmailResp = await gmail.send(draftMessage)
         const outlookResp = await outlook.send(draftMessage)
     } catch (ex) {
         console.log(ex.response.status)

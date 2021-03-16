@@ -1,17 +1,21 @@
 {
-    "name": "integrations",
-    "version": "0.0.0-rc1",
-    "description": "Shared API library to working with 3rd Party Integrations",
+    "name": "integrations-lib",
+    "version": "0.0.21",
+    "description": "Shared library to work with 3rd Party APIs with shared interfaces",
     "main": "index.js",
     "types": "index.d.ts",
-    "author": "Amna Labs Inc.",
+    "author": "Amna Labs <integrations@getamna.com>",
+    "repository": {
+        "url": "https://github.com/getamna/integrations",
+        "type": "git"
+    },
     "scripts": {
         "mail": "node examples/mail.js"
     },
     "dependencies": {
         "@types/node": "^14.14.7",
         "axios": "^0.20.0",
-        "libmon": "^1.0.1",
+        "libmon": "^1.0.28",
         "rrule": "^2.6.6"
     },
     "devDependencies": {
@@ -19,5 +23,27 @@
         "dayjs": "^1.10.4",
         "dotenv": "^8.2.0",
         "mocha": "^8.3.1"
-    }
+    },
+    "keywords": [
+        "nylas",
+        "kloudless",
+        "gmail",
+        "outlook",
+        "Jira",
+        "Github",
+        "Calendar",
+        "Shared API",
+        "Productivity",
+        "API",
+        "single api",
+        "email",
+        "calendar",
+        "to-do",
+        "tasks",
+        "todoist",
+        "microsoft-todo",
+        "Azure Devops",
+        "Google Calendar",
+        "Outlook Calendar"
+    ]
 }
