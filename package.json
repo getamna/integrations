@@ -1,6 +1,6 @@
 {
     "name": "integrations-lib",
-    "version": "0.0.21",
+    "version": "0.0.25",
     "description": "Shared library to work with 3rd Party APIs with shared interfaces",
     "main": "index.js",
     "types": "index.d.ts",

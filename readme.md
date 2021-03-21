@@ -1,16 +1,27 @@
-### Integrations
-
 Abstracts multiple APIs to give you a shared library to call against different services such as Mail, Calendar, Work Tracking.
 
-The library has demo limits with a max of 10 calls. [Purchase](https://gumco.com/integrations-library) a full-token.
-
-See all available methods and interfaces in the [Wiki](https://github.com/getamna/integrations/wiki)
+![image](https://user-images.githubusercontent.com/5509813/111352408-23bd9780-8652-11eb-94bf-a0da159e7b15.png)
 
 - ✅ All communication handled directly from library
 - ✅ Promise Based Methods
 - ✅ Typescript Bindings
 - ✅ Support for Mail, Calendar, Task and Work Tracking
 - 😇 Used in [Amna](https://getamna.com)
+
+Everything is handled within the library using REST calls and data transformations. It can be an alternate to services such as Nylas or Kloudless.
+
+You may use the library for free, and purchase a **one-time** access [token](https://libmon.com) for complete library usage.
+
+[Purchase Here](https://gumroad.com/l/integrations-library)
+
+**Free Tier**
+
+- 10 function calls per run in Calendar and Mail APIs
+- Only checkout 1 Task Service (Google, Todoist, Microsoft) at a time
+
+### Docs
+
+See all available methods and interfaces in the [Wiki](https://github.com/getamna/integrations/wiki)
 
 ### Usage
 
@@ -55,22 +66,11 @@ async function sendMail() {
 }
 ```
 
-### 💸 Tokenized with Libmon 💸
-
-You may demo the library for free, and purchase a **one-time** access token for complete library usage. Read [pricing](https://gumco.com/integrations-library)
-
-Alternate to services such as Nylas or Kloudless.
-
-#### Free Limits
-
-- Max 10 function calls in Calendar and Mail APIs
-- Only 1 Task Service (Google, Todoist, Microsoft) at a time
-
 ### Authentication
 
-This library does not provide UI for authentication to an OAuth Provider. If you purchased a token, you can purchase our OAuth Helper for Javascript that works with most 3rd party providers. [See here](https://github.com/getamna/integrations)
+This library does not provide UI for authentication to an OAuth Provider. If you purchased a token, you can purchase our OAuth Helper for Javascript that works with most 3rd party providers.
 
-You can obtainin tokens from Google and Microsoft for [testing](https://github.com/getamna/integrations/wiki/Personal-Auth-Tokens)
+You can obtain tokens from Google and Microsoft for [testing](https://github.com/getamna/integrations/wiki/Personal-Auth-Tokens)
 
 ## Interface and API Definitions
 
